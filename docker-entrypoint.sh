@@ -1,12 +1,9 @@
 #!/bin/bash
-repo=${PROJECT_REPOSITORY_URL}
-repo="${repo:8}"
-githubrepo=https://${GITHUB_TOKEN}@$repo
 source /etc/profile
 echo "Starting the build"
 cd /usr/www
 echo "Checkout source code"
-git clone $githubrepo apps/app
+git clone ${PROJECT_REPOSITORY_URL} apps/app
 cd apps/app
 git checkout ${PROJECT_BRANCH}
 echo "Checkout source code"
